@@ -3,3 +3,4 @@
 .yarn
 dist
 .editorconfig
+node_modules
