@@ -3,9 +3,10 @@
   "scripts": {
     "start": "node ./dist/index.js",
     "dev": "nodemon",
+    "tw:build": "tailwindcss -i ./src/input.css -o ./public/main.css --watch",
     "build": "tsc"
   },
-  "packageManager": "yarn@4.6.0",
+  "packageManager": "yarn@1.22.22",
   "devDependencies": {
     "@types/express": "^5.0.3",
     "@types/morgan": "^1.9.10",
@@ -16,8 +17,9 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "@tailwindcss/cli": "^4.1.14",
+    "ejs": "^3.1.10",
     "express": "^5.1.0",
     "morgan": "^1.10.1"
-  },
-  "packageManager": "yarn@1.22.22"
+  }
 }
