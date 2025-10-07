@@ -194,6 +194,9 @@
   }
 }
 @layer utilities {
+  .col-span-full {
+    grid-column: 1 / -1;
+  }
   .container {
     width: 100%;
     @media (width >= 40rem) {
