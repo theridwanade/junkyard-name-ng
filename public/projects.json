@@ -1,3 +1,7 @@
 [
-
+  {
+    "name": "archd",
+    "description": "A simple file or archiver automation system built in python, for copying files and whatever. Just automating file operation.",
+    "link": "https://github.com/theridwanade/archd"
+  }
 ]
