@@ -1,16 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
-    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/main.css" />
 </head>
-<body class="bg-black text-white">
-<section class="flex flex-col items-center justify-center text-center py-16 px-4">
-    <h1 class="text-5xl font-bold mb-4 tracking-tight">Welcome to Junkyard</h1>
-    <p class="text-lg text-gray-600 max-w-xl">
-        A small space where I drop the projects, tools, and random scripts I build — finished or not.
+<body class="bg-black text-gray-200 min-h-screen flex flex-col font-sans">
+<!-- Hero Section -->
+<section class="flex flex-col items-center justify-center text-center py-24 px-6">
+    <h1 class="text-5xl font-bold mb-4 tracking-tight text-white">
+        Welcome to Junkyard
+    </h1>
+    <p class="text-lg text-gray-400 max-w-2xl leading-relaxed">
+        A small space where I drop the projects, tools, and random scripts I build, finished or not.
         Some useful, some experimental, all part of the process.
     </p>
     <div class="mt-6 text-gray-500 text-sm flex flex-wrap gap-2 justify-center">
@@ -18,28 +21,47 @@
         <a
                 href="https://theridwanade.vercel.app/"
                 target="_blank"
-                class="underline hover:text-gray-800"
+                class="underline hover:text-white transition-colors"
+        >Ridwan</a
         >
-            Ridwan
-        </a>
         <span>·</span>
         <a
                 href="https://github.com/theridwanade"
                 target="_blank"
-                class="underline hover:text-gray-800"
+                class="underline hover:text-white transition-colors"
+        >GitHub</a
         >
-            GitHub
-        </a>
         <span>·</span>
         <a
                 href="https://x.com/theridwanade"
                 target="_blank"
-                class="underline hover:text-gray-800"
+                class="underline hover:text-white transition-colors"
+        >X</a
         >
-            X
-        </a>
     </div>
 </section>
-<hr class="bg-gray-100 h-[1px] mb-10px" />
+
+<!-- Divider -->
+<hr class="border-gray-800 w-11/12 mx-auto mb-12" />
+
+<!-- Projects Section -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 pb-20 max-w-6xl mx-auto w-full">
+    <% projects.forEach(project => { %>
+        <div
+                class="bg-gray-900 rounded-2xl p-6 hover:bg-gray-800 transition-colors duration-300 flex flex-col justify-between shadow-md hover:shadow-lg"
+        >
+            <div>
+                <h2 class="text-2xl font-semibold mb-2 text-white"><%= project.name %></h2>
+                <p class="text-gray-400 mb-4 text-sm leading-relaxed"><%= project.description %></p>
+            </div>
+            <a
+                    href="<%= project.link %>"
+                    class="text-blue-400 hover:text-blue-300 hover:underline text-sm mt-auto"
+                    target="_blank"
+            >View Project →</a
+            >
+        </div>
+    <% }) %>
+</section>
 </body>
 </html>

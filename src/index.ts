@@ -14,7 +14,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "..", "views"));
 
 app.get("/", (req, res) => {
-  res.render("index", {title: "Junk Yard"});
+  res.render("index", {title: "Junk Yard", projects: [{name: "Project 1", description: "Description 1", link: "#"}]});
 });
 
 
