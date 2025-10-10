@@ -55,10 +55,4 @@
         @apply text-base;
     }
 
-
-
-    /* Responsive tweak for narrow screens */
-    @screen sm {
-        .ordo-container { @apply px-8; }
-    }
 }
