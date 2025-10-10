@@ -22,10 +22,10 @@ app.get("/", async (req, res) => {
         const data = await fs.readFile(filePath, "utf-8");
         const projects = JSON.parse(data);
 
-        res.render("index", { title: "Junk Yard", projects });
+        res.render("index", { title: "Junkyard – Ridwan’s Experimental Projects & Tools", description: "Explore Junkyard by theridwanade – a space for experimental tools, scripts, and open-source projects built with Rust, TypeScript, Python and curiosity.", projects });
     } catch (error) {
         console.error("Error loading projects:", error);
-        res.render("index", { title: "Junk Yard", projects: [] });
+        res.render("index", { title: "Junkyard – Ridwan’s Experimental Projects & Tools", description: "Explore Junkyard by theridwanade – a space for experimental tools, scripts, and open-source projects built with Rust, TypeScript, Python and curiosity.", projects: [] });
     }
 });
 
@@ -42,10 +42,10 @@ app.get("/projects/:projectId", async (req, res) => {
 
         if (!response.ok) throw new Error("Failed to fetch Markdown");
         const md = await response.text();
-        const html = await marked(md);
+        const content = await marked(md);
 
         if (project) {
-            res.render("project", { title: project.name, description: html });
+            res.render("project", { title: project.name, description: project.description, content });
         } else {
             res.status(404).send("Project not found");
         }

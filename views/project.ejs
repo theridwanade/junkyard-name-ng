@@ -1,17 +1,68 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <!-- Basic meta -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/main.css" />
-    <style>
 
-    </style>
+    <!-- Dynamic Title -->
+    <title><%= title ? `${title} – Junkyard by theridwanade` : "Junkyard – Experimental Projects & Tools by Ridwan" %></title>
+
+    <!-- Dynamic Description -->
+    <meta
+            name="description"
+            content="<%= description || 'Explore Junkyard by theridwanade – a playground of experimental tools, scripts, and open-source projects built with Rust, TypeScript, Python, and curiosity.' %>"
+    />
+
+    <meta name="keywords" content="Ridwan, Junkyard, Rust, TypeScript, Python, University of Ilorin, open source, CLI tools, MovieBox, Ordo, software engineer, backend systems, projects" />
+    <meta name="author" content="Ridwan" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical (avoid duplicate indexing) -->
+    <link rel="canonical" href="https://junkyard.name.ng/projects/<%= title%>" />
+
+    <!-- Open Graph (for sharing) -->
+    <meta property="og:title" content="<%= title || 'Junkyard – Ridwan’s Experimental Projects & Tools' %>" />
+    <meta property="og:description" content="<%= description || 'A small space where Ridwan drops his experimental builds, from Rust CLIs to TypeScript utilities.' %>" />
+    <meta property="og:type" content="website" />
+
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="<%= title || 'Junkyard – Ridwan’s Projects' %>" />
+    <meta name="twitter:description" content="<%= description || 'Explore experimental projects, CLIs, and backend systems built by Ridwan.' %>" />
+    <meta name="twitter:image" content="https://junkyard.name.ng/preview.png" />
+    <meta name="twitter:creator" content="@theridwanade" />
+
+    <!-- Favicon (for browser & social previews) -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/main.css" />
+
+    <!-- Structured Data (JSON-LD for Google) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Ridwan",
+            "alternateName": "theridwanade",
+            "url": "https://junkyard.name.ng/",
+            "sameAs": [
+                "https://github.com/theridwanade",
+                "https://x.com/theridwanade",
+                "https://linkedin.com/in/theridwanade/",
+                "https://theridwanade.vercel.app/"
+            ],
+            "jobTitle": "Distributed Systems & Backend Engineer",
+            "description": "Ridwan builds experimental tools, CLIs, and backend systems in Rust and TypeScript. Junkyard is his playground of ideas."
+        }
+    </script>
 </head>
+
 <body class="bg-black text-gray-200 min-h-screen flex flex-col font-sans p-3">
 <div class="max-w-4xl mx-auto w-full">
-<%- description %>
+    <%- content %>
 </div>
 </body>
 </html>

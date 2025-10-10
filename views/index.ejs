@@ -3,8 +3,42 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title %></title>
+    <title><%= title || "Junkyard – theridwanade’s Experimental Projects & Tools" %></title>
+    <meta
+            name="description"
+            content="<%= description || 'Explore Junkyard by theridwanade – a space for experimental tools, scripts, and open-source projects built with Rust, TypeScript, Python and curiosity.' %>"
+    />
+    <meta name="keywords" content="Ridwan, Junkyard, Rust, TypeScript, Python, University of Ilorin, open source, CLI tools, Python, software engineer, MovieBox, Ordo" />
+    <meta name="author" content="Ridwan" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://junkyard.name.ng/" />
+
+    <meta property="og:title" content="Junkyard – Ridwan’s Experimental Projects & Tools" />
+    <meta property="og:description" content="Explore the Junkyard — where Ridwan experiments with Rust, TypeScript, and Python. A collection of unfinished, unfiltered ideas that still work." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://junkyard.name.ng/" />
+
     <link rel="stylesheet" href="/main.css" />
+
+    <!-- Structured Data (JSON-LD for Google) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Ridwan",
+            "alternateName": "theridwanade",
+            "url": "https://junkyard.name.ng/",
+            "sameAs": [
+                "https://github.com/theridwanade",
+                "https://x.com/theridwanade",
+                "https://linkedin.com/in/theridwanade/",
+                "https://theridwanade.vercel.app/"
+            ],
+            "jobTitle": "Distributed Systems & Backend Engineer",
+            "description": "Ridwan builds experimental tools, CLIs, and backend systems in Rust and TypeScript. Junkyard is his playground of ideas."
+        }
+    </script>
+
 </head>
 <body>
 <!-- Hero Section -->

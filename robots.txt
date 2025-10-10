@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Disallow common private or build directories (if any)
+Disallow: /node_modules/
+Disallow: /api/
+Disallow: /admin/
+Disallow: /scripts/
+Disallow: /config/
+
+# Sitemap for search engines
+Sitemap: https://junkyard.name.ng/sitemap.xml
+
+# Developer info
+# Built by theridwanade — https://theridwanade.vercel.app
