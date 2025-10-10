@@ -1,7 +1,8 @@
 [
   {
-    "name": "archd",
+    "name": "ordo",
     "description": "A simple file or archiver automation system built in python, for copying files and whatever. Just automating file operation.",
-    "link": "https://github.com/theridwanade/archd"
+    "link": "https://github.com/theridwanade/ordo",
+    "viewPage": "/projects/ordo"
   }
 ]
